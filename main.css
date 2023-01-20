@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    border: 1px solid black;
+
+}
+
+.content {
+    background-color: #d4d3d3;
+    border: 1px solid black;
+    flex: 1;
+}
+
+.appearance {
+    background-color: #e2e2e2;
+    border: 1px solid black;
+    flex: 1;
+}
+
+.cv {
+    background-color: red;
+    flex: 3;
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 50em;
+    
+    
+
+}
+
+.subtitles {
+    text-decoration: underline;
+}
+
+.content h2,
+.appearance h2 {
+    text-align: center;
+}
+

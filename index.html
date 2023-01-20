@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="cv.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h2>Metin İçerikleri</h2>
+            <hr>
+            <table id="name-info">
+                <b class="subtitles">İsim Kutusu</b>
+                <tr>
+
+                    <td><label for="adsoyad">Ad Soyad :</label></td>
+                    <td><input type="text" name="adsoyad" onkeyup="WritetoCV(id,'cv-name')" id="adsoyad"></td>
+                </tr>
+                <tr>
+                    <td><label for="unvan">Unvan :</label></td>
+                    <td><input type="text" name="unvan" onkeyup="WritetoCV(id,'cv-job-title')" id="unvan"></td>
+                </tr>
+            </table>
+            <table id="contact-info">
+                <b class="subtitles">İletişim Bilgileri</b>
+                <tr>
+                    <td><label for="telefon">Telefon :</label></td>
+                    <td><input type="text" name="telefon" onkeyup="WritetoCV(id,'cv-phone')" id="telefon"></td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Mail :</label></td>
+                    <td><input type="text" name="mail" onkeyup="WritetoCV(id,'cv-mail')" id="mail"></td>
+                </tr>
+                <tr>
+                    <td><label for="web">Web :</label></td>
+                    <td><input type="text" name="web" onkeyup="WritetoCV(id,'cv-website')" id="web"></td>
+                </tr>
+                <tr>
+                    <td><label for="adres">Adres :</label></td>
+                    <td><textarea name="adres" id="adres" onkeyup="WritetoCV(id,'cv-adress')" cols="20"
+                            rows="5"></textarea></td>
+                </tr>
+
+            </table>
+            <table id="education-info">
+                <b class="subtitles">Eğitim Bilgileri</b>
+                <tr>
+                    <td><label for="açıklamaegitim">Açıklama :</label></td>
+                    <td><textarea name="açıklamaegitim" id="açıklamaegitim" onkeyup="WritetoCV(id,'cv-education-text')"
+                            cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="okulsayisi">Okul Sayısı :</label></td>
+                    <td><select onchange="EducationInfo(id)" name="okulsayisi" id="okulsayisi">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select></td>
+                </tr>
+                <table id="education-info-number"></table>
+            </table>
+            <table id="talent-info">
+                <b class="subtitles">Yetenekler</b>
+                <tr>
+                    <td><label for="açıklamayetenek">Açıklama :</label></td>
+                    <td><textarea name="açıklamayetenek" id="açıklamayetenek" onkeyup="WritetoCV(id,'cv-talent-text')"
+                            cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="yeteneksayisi">Yetenek Sayısı :</label></td>
+                    <td><select onchange="TalentInfo(id)" name="yeteneksayisi" id="yeteneksayisi">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select></td>
+                </tr>
+                <table id="talent-info-number"></table>
+            </table>
+            <table id="aboutme-info">
+                <b class="subtitles">Hakkımda</b>
+                <tr>
+                    <td><label for="açıklamahakkımda">Açıklama :</label></td>
+                    <td><textarea name="açıklamahakkımda" onkeyup="WritetoCV(id,'cv-aboutme-text')"
+                            id="açıklamahakkımda" cols="20" rows="5"></textarea></td>
+                </tr>
+            </table>
+            <table id="experience-info">
+                <b class="subtitles">İş Deneyimi</b>
+                <tr>
+                    <td><label for="açıklamaisdeneyimi">Açıklama :</label></td>
+                    <td><textarea name="açıklamaisdeneyimi" onkeyup="WritetoCV(id,'cv-experience-text')"
+                            id="açıklamaisdeneyimi" cols="20" rows="5"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class="appearance">
+            <h2>Görünüş</h2>
+            <hr>
+            <table id="colors-info">
+                <b class="subtitles">Renkler</b>
+                <tr>
+                    <td><label for="arkaplanrenk">Arka Plan Rengi :</label></td>
+                    <td><input type="color" oninput="BackgroundColor(id,'cv-section')" name="arkaplanrenk"
+                            id="arkaplanrenk"></td>
+                </tr>
+                <tr>
+                    <td><label for="solkolonrenk">Sol Kolon Rengi :</label></td>
+                    <td><input type="color" oninput="BackgroundColor(id,'cv-firstcolumn')" name="solkolonrenk"
+                            id="solkolonrenk"></td>
+                </tr>
+                <tr>
+                    <td><label for="isimkuturenk">İsim Kutusu Rengi :</label></td>
+                    <td><input type="color" oninput="BackgroundColor(id,'cv-name-section')" name="isimkuturenk"
+                            id="isimkuturenk"></td>
+                </tr>
+                <tr>
+                    <td><label for="isimkutuyazırenk">İsim Kutusu Yazı Rengi :</label></td>
+                    <td><input type="color" oninput="Color(id,'cv-name-section')" name="isimkutuyazırenk"
+                            id="isimkutuyazırenk"></td>
+                </tr>
+            </table>
+            <table id="fonttype-info">
+                <b class="subtitles">Yazı Tipi</b>
+                <tr>
+                    <td><label for="yazıtipi">Yazı Tipi :</label></td>
+                    <td>
+                        <select onchange="FontFamily(id,'cv-section')" name="yazıtipi" id="yazıtipi">
+                            <option value="Lucida Sans">Lucida Handwriting</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table id="photo-info">
+                <b class="subtitles">Fotoğraf</b>
+                <tr>
+                    <td><label for="fotoçerçeve">Fotoğraf Çerçeve Şekli :</label></td>
+                    <td><select onchange="PhotoFrame(id,'cv-photo')" name="fotoçerçeve" id="fotoçerçeve">
+                            <option value="1">Yuvarlak</option>
+                            <option value="2">Oval</option>
+                            <option value="3">Köşeli</option>
+                        </select></td>
+                </tr>
+            </table>
+            <table id="line-info">
+                <b class="subtitles">Başlık Altı Çizgileri</b>
+                <tr>
+                    <td><label for="çizgirenk">Çizgi Rengi</label></td>
+                    <td><input type="color" oninput="LineColor(id,'cv-line-type')" name="çizgirenk" id="çizgirenk"></td>
+                </tr>
+                <tr>
+                    <td><label for="çizgişekil">Çizgi Şekli</label></td>
+                    <td><select onchange="LineType(id,'cv-line-type')" name="çizgişekil" id="çizgişekil">
+                            <option value="solid">Düz</option>
+                            <option value="dotted">Çizgili</option>
+                            
+                        </select></td>
+                </tr>
+            </table>
+        </div>
+        <div id="cv-section" class="cv">
+            <div id="cv-firstcolumn" class="cv-firstcolumn">
+                
+              
+                <div class="cv-contact">
+                    <div id="cv-photo" class="cv-photo"><span>FOTOĞRAF</span></div>
+                    <ul>
+                        <b>İLETİŞİM</b>
+                        <hr class="cv-line-type">
+                        <li id="cv-phone">Telefon</li>
+                        <li id="cv-mail">Mail</li>
+                        <li id="cv-adress">Adres</li>
+                        <li id="cv-website">Website</li>
+                    </ul>
+                </div>
+                <div class="cv-education">
+                    <ul id="cv-education-list">
+                        <b>EĞİTİM</b>
+                        <hr class="cv-line-type">
+                        <span id="cv-education-text">Açıklama</span>
+                        <div id="cv-education-list-number"></div>
+                    </ul>
+                </div>
+                <div class="cv-talent">
+                    <ul id="cv-talent-list">
+                        <b>YETENEKLER</b>
+                        <hr class="cv-line-type">
+                        <span id="cv-talent-text">Açıklama</span>
+                        <div id="cv-talent-list-number"></div>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-secondcolumn">
+                <div id="cv-name-section" class="cv-name-section">
+                    <h1 id="cv-name">{AD SOYAD}</h1>
+                    <h2 id="cv-job-title">{UNVAN}</h2>
+                </div>
+                <div class="cv-infos-section">
+                    <ul id="cv-aboutme-list">
+                        <b>HAKKIMDA</b>
+                        <hr class="cv-line-type">
+                        <span id="cv-aboutme-text">Açıklama</span>
+                    </ul>
+                    <ul id="cv-experience-list">
+                        <b>İŞ DENEYİMİ</b>
+                        <hr class="cv-line-type">
+                        <span id="cv-experience-text">Açıklama</span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

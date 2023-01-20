@@ -1,0 +1,74 @@
+.cv-firstcolumn {
+    background-color: #920606;
+}
+
+.cv-photo {
+    width: 8em;
+    height: 8em;
+    border-radius: 8em;
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 20%;
+
+}
+.cv-photo span{
+    position: relative;
+    top: 3.5em;
+}
+.cv-line-type{
+    border: 1px solid black;
+   
+
+
+}
+.cv-firstcolumn{
+    flex:1;
+    margin-left: 1.5em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 6em;
+   
+  
+
+}
+.cv-secondcolumn{
+    flex: 2;
+    
+}
+
+.cv-secondcolumn{
+    display: flex;
+    flex-direction: column;
+}
+.cv-name-section{
+    background-color: #282828;
+    flex: 1;
+    color: white;
+    text-align: center;
+}
+.cv-name-section h1,
+.cv-name-section h2{
+    margin-top: 1.5em;
+}
+.cv-infos-section{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10em;
+    
+    
+
+}
+.cv-infos-section ul{
+    padding-right: 1em;
+    margin-left: -2em;
+    text-align: left;
+}
+.cv-infos-section span{
+   
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+}
